@@ -1,0 +1,7 @@
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\bin\Debug\HealthSystemV3.exe.config
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\bin\Debug\HealthSystemV3.exe
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\bin\Debug\HealthSystemV3.pdb
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\obj\Debug\HealthSystemV3.csprojAssemblyReference.cache
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\obj\Debug\HealthSystemV3.csproj.CoreCompileInputs.cache
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\obj\Debug\HealthSystemV3.exe
+C:\Users\KRIS\Documents\School\Y1S2\OOP\HealthSystemV3\obj\Debug\HealthSystemV3.pdb
