@@ -8,6 +8,8 @@ namespace HealthSystemV3
 {
     class Enemy : Character
     {
+        int worth;
+
         public Enemy()
         {
             int rnd = randomNum.Next(1,10);

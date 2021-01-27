@@ -30,23 +30,29 @@ namespace HealthSystemV3
             maxBarrier = (magic * 2) + 10;
             currentHealth = maxHealth;
             currentBarrier = maxBarrier;
+
+            Console.WriteLine("What is you name?");
+            name = Console.ReadLine();
         }
         
 
         public void DisplayStats()
         {
-            Console.WriteLine("------------- Status -------------");
+            //Console.WriteLine("------------- Status -------------");
+            Console.WriteLine("------------- Stats --------------");
+            Console.WriteLine(name);
+            Console.WriteLine();
             Console.WriteLine("Level: " + level);
             Console.WriteLine();
             Console.WriteLine("Health: " + currentHealth + "/" + maxHealth);
-            Console.WriteLine();
-            Console.WriteLine("Exp: " + exp + "/" + maxExp);
             Console.WriteLine("Shield: " + currentBarrier + "/" + maxBarrier);
-            Console.WriteLine("------------- Stats --------------");
+            Console.WriteLine("Exp: " + exp + "/" + maxExp);
+            Console.WriteLine();
             Console.WriteLine("Strength: " + strength);
             Console.WriteLine("Vitality: " + vitality);
             Console.WriteLine("Speed: " + speed);
             Console.WriteLine("Magic: " + magic);
+            Console.WriteLine("----------------------------------");
         }
 
         //--------------------- Private Methods -------------------
@@ -93,6 +99,4 @@ namespace HealthSystemV3
             }
         }
     }
-
-
 }

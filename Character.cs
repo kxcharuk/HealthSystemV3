@@ -16,7 +16,9 @@ namespace HealthSystemV3
         protected int currentBarrier;
         protected int maxBarrier;
         // char stats ?? ----> could be cool to experiment with adjusting stats with each level up and having stats effect health and takedamage
+        protected string name;
         protected int level;
+
         public int strength;
         protected int vitality;
         protected int magic;
@@ -27,27 +29,37 @@ namespace HealthSystemV3
         // --------- public methods -----------
 
         public void TakeDamage(int damage)
-        {   if(damage < 0)
+        {    
+            if (damage < 0)
             {
-
-                if(currentBarrier > 0)
+                Console.WriteLine();
+                Console.WriteLine("ERROR! TakeDamage() cannot take in a negative value. Value of: int damage = " + damage);
+                return;
+            }
+            if(currentBarrier > 0)
+            {
+                currentBarrier -= damage;
+                if(currentBarrier < 0)
                 {
-                    currentBarrier -= damage;
-                    if(currentBarrier < 0)
-                    {
                         int spillOver = -currentBarrier;
                         currentHealth -= spillOver;
-                    }
                 }
-                else
-                {
-                    currentHealth -= damage;
-                }
-                RangeCheck();
+            }
+            else
+            {
+                currentHealth -= damage;
+            }
+            Console.WriteLine();
+            Console.WriteLine(this.name + " took " + damage + " damage!");
+            RangeCheck();
+            if(currentHealth == 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine(this.name + " has died...");
             }
         }
 
-        public void Heal(int amount)
+        /*public void Heal(int amount)
         {
             if(currentHealth < maxHealth)
             {
@@ -63,16 +75,32 @@ namespace HealthSystemV3
                 currentBarrier += amount;
             }
             RangeCheck();
-        }
+        }*/
 
-        public void HealHealth(int amount)
+        public void Heal(int amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("ERROR! Heal() cannot take in a negative value. Value of: int amount = " + amount);
+                return;
+            }
+            Console.WriteLine();
+            Console.WriteLine(this.name + " healed " + amount + " health!");
             currentHealth += amount;
             RangeCheck();
         }
 
-        public void RegenerateShield(int amount)
+        public void RegenerateBarrier(int amount)
         {
+            if (amount < 0)
+            {
+                Console.WriteLine();
+                Console.WriteLine("ERROR! RegenerateBarrier() cannot take in a negative value. Value of: int amount = " + amount);
+                return;
+            }
+            Console.WriteLine();
+            Console.WriteLine(this.name + " regenerated " + amount + " barrier!");
             currentBarrier += amount;
             RangeCheck();
         }
